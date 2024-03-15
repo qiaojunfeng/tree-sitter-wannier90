@@ -1,0 +1,59 @@
+==================
+kpoint_path
+==================
+
+begin kpoint_path
+ Γ   0.0      0.0      0.0 X   0.0      0.0      0.5
+ X   0.0      0.0      0.5 M  -0.5      0.5      0.5
+end kpoint_path
+
+---
+
+(document
+  (kpoint_path
+    (identifier)
+    (vec3
+      (number)
+      (number)
+      (number))
+    (identifier)
+    (vec3
+      (number)
+      (number)
+      (number))
+    (identifier)
+    (vec3
+      (number)
+      (number)
+      (number))
+    (identifier)
+    (vec3
+      (number)
+      (number)
+      (number))))
+
+==================
+kpoint_path with comments
+==================
+
+begin kpoint_path
+
+ Γ   0.0      0.0      0.0 X   0.0      0.0      0.5
+! 1
+end kpoint_path
+
+---
+
+(document
+  (kpoint_path
+    (identifier)
+    (vec3
+      (number)
+      (number)
+      (number))
+    (identifier)
+    (vec3
+      (number)
+      (number)
+      (number))
+    (comment)))

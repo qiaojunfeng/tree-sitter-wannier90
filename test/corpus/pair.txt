@@ -1,0 +1,153 @@
+==================
+pair =
+==================
+
+num_wann = 5
+
+---
+
+(document
+  (pair
+    (identifier)
+    (number)))
+
+==================
+pair :
+==================
+
+num_wann : 5
+
+---
+
+(document
+  (pair
+    (identifier)
+    (number)))
+
+==================
+pair multiline
+==================
+
+num_wann : 5
+num_bands =  10
+
+---
+
+(document
+  (pair
+    (identifier)
+    (number))
+  (pair
+    (identifier)
+    (number)))
+
+==================
+pair boolean true
+==================
+
+auto_projections : true
+auto_projections : .true.
+auto_projections : True
+auto_projections : .TRUE.
+
+---
+
+(document
+  (pair
+    (identifier)
+    (boolean))
+  (pair
+    (identifier)
+    (boolean))
+  (pair
+    (identifier)
+    (boolean))
+  (pair
+    (identifier)
+    (boolean)))
+
+==================
+pair boolean false
+==================
+
+auto_projections : false
+auto_projections : .false.
+auto_projections : False
+auto_projections : .FALSE.
+
+---
+
+(document
+  (pair
+    (identifier)
+    (boolean))
+  (pair
+    (identifier)
+    (boolean))
+  (pair
+    (identifier)
+    (boolean))
+  (pair
+    (identifier)
+    (boolean)))
+
+==================
+pair number
+==================
+
+fermi_energy = 1
+fermi_energy = 1.
+fermi_energy = 1.0
+fermi_energy = -1
+fermi_energy = -1e2
+fermi_energy = -1D-2
+
+---
+
+(document
+  (pair
+    (identifier)
+    (number))
+  (pair
+    (identifier)
+    (number))
+  (pair
+    (identifier)
+    (number))
+  (pair
+    (identifier)
+    (number))
+  (pair
+    (identifier)
+    (number))
+  (pair
+    (identifier)
+    (number)))
+
+==================
+pair triple numbers
+==================
+
+mp_grid = 1 2 3
+
+---
+
+(document
+  (pair
+    (identifier)
+    (number)
+    (number)
+    (number)))
+
+==================
+pair range
+==================
+
+exclude_bands = 1-2,5
+
+---
+
+(document
+  (pair
+    (identifier)
+    (range)))

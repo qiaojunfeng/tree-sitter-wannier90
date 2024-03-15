@@ -1,0 +1,67 @@
+{
+  "name": "tree-sitter-wannier90",
+  "version": "0.1.0",
+  "description": "Wannier90 files grammar for tree-sitter",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "keywords": [
+    "parser",
+    "wannier90",
+    "tree-sitter"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qiaojunfeng/tree-sitter-wannier90.git"
+  },
+  "homepage": "https://github.com/qiaojunfeng/tree-sitter-wannier90#readme",
+  "author": {
+    "name": "Junfeng Qiao",
+    "email": "qiaojunfeng@outlook.com",
+    "url": "https://github.com/qiaojunfeng"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "node-gyp-build": "^4.8.0",
+    "node-addon-api": "^7.1.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.22.1",
+    "prebuildify": "^6.0.0"
+  },
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ],
+  "scripts": {
+    "build": "tree-sitter generate && node-gyp-build",
+    "generate": "tree-sitter generate",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse",
+    "prebuildify": "prebuildify --napi --strip",
+    "install": "node-gyp-build"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.wannier90",
+      "file-types": [
+        "win"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ],
+      "injection-regex": "^wannier90$"
+    }
+  ]
+}

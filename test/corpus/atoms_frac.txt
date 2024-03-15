@@ -1,0 +1,46 @@
+==================
+block atoms_frac
+==================
+
+begin atoms_frac
+Cu         0.0000000000       0.0000000000       0.0000000000
+Cu         1.0000000000       0.0000000000       0.0000000000
+end atoms_frac
+
+---
+
+(document
+  (atoms_frac
+    (identifier)
+    (vec3
+      (number)
+      (number)
+      (number))
+    (identifier)
+    (vec3
+      (number)
+      (number)
+      (number))))
+
+==================
+block atoms_frac with comment
+==================
+
+begin atoms_frac ! 1
+Cu         0.0000000000       0.0000000000       0.0000000000 ! 2
+! 3
+end atoms_frac # 4
+
+---
+
+(document
+  (atoms_frac
+    (comment)
+    (identifier)
+    (vec3
+      (number)
+      (number)
+      (number))
+    (comment)
+    (comment)
+    (comment)))

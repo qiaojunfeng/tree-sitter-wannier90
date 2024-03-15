@@ -1,0 +1,48 @@
+==================
+comment #
+==================
+
+# a b
+
+---
+
+(document
+  (comment))
+
+==================
+comment !
+==================
+
+! a b
+
+---
+
+(document
+  (comment))
+
+==================
+comment multiline
+==================
+
+! a b
+# c d
+
+---
+
+(document
+  (comment)
+  (comment))
+
+==================
+comment inline
+==================
+
+num_wann = 4 ! a b
+
+---
+
+(document
+  (pair
+    (identifier)
+    (number)
+    (comment)))

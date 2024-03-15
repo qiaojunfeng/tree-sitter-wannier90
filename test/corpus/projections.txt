@@ -1,0 +1,146 @@
+==================
+projections spd
+==================
+
+begin projections
+Fe : sp3d2;dxy;dxz;dyz
+end projections
+
+---
+
+(document
+  (projections
+    (orbital_def
+      (identifier)
+      (sph_ham)
+      (sph_ham)
+      (sph_ham)
+      (sph_ham))))
+
+==================
+projections with comments
+==================
+
+begin projections
+! 1
+Fe : sp3d2
+! 2
+end projections
+
+---
+
+(document
+  (projections
+    (comment)
+    (orbital_def
+      (identifier)
+      (sph_ham))
+    (comment)))
+
+==================
+projections minus
+==================
+
+begin projections
+Na:sp-1
+end projections
+
+---
+
+(document
+  (projections
+    (orbital_def
+      (identifier)
+      (sph_ham))))
+
+==================
+projections fractional
+==================
+
+begin projections
+Cu:d
+f=0.25,0.25,0.25:s
+f=-0.25,-0.25,-0.25:s
+end projections
+
+---
+
+(document
+  (projections
+    (orbital_def
+      (identifier)
+      (sph_ham))
+    (orbital_def
+      (coordinate_type)
+      (vec3
+        (number)
+        (number)
+        (number))
+      (sph_ham))
+    (orbital_def
+      (coordinate_type)
+      (vec3
+        (number)
+        (number)
+        (number))
+      (sph_ham))))
+
+==================
+projections random
+==================
+
+begin projections
+random
+end projections
+
+---
+
+(document
+  (projections
+    (orbital_random)))
+
+==================
+projections cartesian
+==================
+
+begin projections
+Ang
+c=-1.58,-1.15,2.84:s
+c=-1.58,1.15,2.84:s
+c=0.60,1.86,2.84:s
+c=1.96,0.00,2.84:s
+end projections
+
+---
+
+(document
+  (projections
+    (identifier)
+    (orbital_def
+      (coordinate_type)
+      (vec3
+        (number)
+        (number)
+        (number))
+      (sph_ham))
+    (orbital_def
+      (coordinate_type)
+      (vec3
+        (number)
+        (number)
+        (number))
+      (sph_ham))
+    (orbital_def
+      (coordinate_type)
+      (vec3
+        (number)
+        (number)
+        (number))
+      (sph_ham))
+    (orbital_def
+      (coordinate_type)
+      (vec3
+        (number)
+        (number)
+        (number))
+      (sph_ham))))

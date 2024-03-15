@@ -1,0 +1,64 @@
+==================
+kpoints
+==================
+
+begin kpoints
+  0.00000000  0.00000000  0.00000000
+  0.00000000  0.00000000  0.25000000
+end kpoints
+
+---
+
+(document
+  (kpoints
+    (vec3
+      (number)
+      (number)
+      (number))
+    (vec3
+      (number)
+      (number)
+      (number))))
+
+==================
+kpoints with weights
+==================
+
+begin kpoints
+  0.00000000  0.00000000  0.00000000  1.562500e-02
+  0.00000000  0.00000000  0.25000000  1.562500e-02
+end kpoints
+
+---
+
+(document
+  (kpoints
+    (vec3
+      (number)
+      (number)
+      (number))
+    (number)
+    (vec3
+      (number)
+      (number)
+      (number))
+    (number)))
+
+==================
+kpoints with comments
+==================
+
+begin kpoints
+  0.00000000  0.00000000  0.00000000
+! 1
+end kpoints
+
+---
+
+(document
+  (kpoints
+    (vec3
+      (number)
+      (number)
+      (number))
+    (comment)))
