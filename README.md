@@ -2,6 +2,17 @@
 
 [wannier90](https://github.com/wannier-developers/wannier90) grammar for tree-sitter.
 
+## Usage
+
+- For `neovim`, see <https://github.com/nvim-treesitter/nvim-treesitter>
+- For `helix`, see <https://docs.helix-editor.com/languages.html#tree-sitter-grammar-configuration>
+- Test it in CLI
+
+    ```shell
+    # Highlight file
+    tree-sitter highlight example.win
+    ```
+
 ## Development
 
 ```shell
@@ -11,11 +22,8 @@ npm build
 # Generate parser & language bindings
 tree-sitter generate
 
-## Test grammar
+# Test grammar
 tree-sitter test
-
-## Highlight file
-tree-sitter highlight example.win
 ```
 
 ## Reference
