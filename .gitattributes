@@ -6,6 +6,8 @@ src/tree_sitter/* linguist-generated
 
 bindings/** linguist-generated
 binding.gyp linguist-generated
+pyproject.toml linguist-generated
 setup.py linguist-generated
 Makefile linguist-generated
 Package.swift linguist-generated
+Cargo.toml linguist-generated
