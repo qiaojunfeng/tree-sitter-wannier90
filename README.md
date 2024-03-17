@@ -1,17 +1,25 @@
 # tree-sitter-wannier90
 
-[wannier90](https://github.com/wannier-developers/wannier90) grammar for tree-sitter.
+[Wannier90](https://github.com/wannier-developers/wannier90) grammar for tree-sitter.
+
+Provides syntax highlighting for `win` files.
+
+<figure>
+<img src='docs/win.webp' width='400'>
+<figcaption>Syntax highlighting in <code>helix</code> editor with theme <code>material_deep_ocean</code> for <code>wannier90/example01/gaas.win</code>.</figcaption>
+</figure>
 
 ## Usage
 
-- For `neovim`, see <https://github.com/nvim-treesitter/nvim-treesitter>
-- For `helix`, see <https://docs.helix-editor.com/languages.html#tree-sitter-grammar-configuration>
 - Test it in CLI
 
     ```shell
     # Highlight file
     tree-sitter highlight example.win
     ```
+
+- For `neovim`, see <https://github.com/nvim-treesitter/nvim-treesitter>
+- For `helix`, see [`docs/helix.md`](docs/helix.md)
 
 ## Development
 
