@@ -1,13 +1,7 @@
-; Properties
-;-----------
-
 [
   (identifier)
   "identifier"
-] @property
-
-; Keywords
-;---------
+] @variable
 
 [
   (coordinate_type)
@@ -15,23 +9,13 @@
   "keyword"
 ] @keyword
 
-; Literals
-;---------
-
-[
-  (boolean)
-] @constant.builtin
+(boolean) @constant.builtin.boolean
 
 (comment) @comment
 
-[
-  (number)
-] @number
+(number) @constant.numeric
 
 (range) @string
-
-; Punctuation
-;------------
 
 [
     "."
