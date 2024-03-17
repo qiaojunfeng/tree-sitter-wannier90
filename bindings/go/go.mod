@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-wannier90
+module github.com/qiaojunfeng/tree-sitter-wannier90
 
 go 1.22
 

@@ -1,12 +1,12 @@
 [package]
 name = "tree-sitter-wannier90"
 description = "Wannier90 grammar for tree-sitter"
-version = "0.0.1"
+version = "0.1.0"
 license = "MIT"
 readme = "README.md"
 keywords = ["incremental", "parsing", "tree-sitter", "wannier90"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/tree-sitter/tree-sitter-wannier90"
+repository = "https://github.com/qiaojunfeng/tree-sitter-wannier90"
 edition = "2021"
 autoexamples = false
 
