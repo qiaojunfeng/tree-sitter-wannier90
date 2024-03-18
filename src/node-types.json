@@ -97,6 +97,25 @@
     }
   },
   {
+    "type": "list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "range",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "orbital_def",
     "named": true,
     "fields": {},
@@ -145,11 +164,15 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
         {
-          "type": "range",
+          "type": "vec3",
           "named": true
         }
       ]
@@ -214,6 +237,10 @@
   },
   {
     "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
     "named": false
   },
   {

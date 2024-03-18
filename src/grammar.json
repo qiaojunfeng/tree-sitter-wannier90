@@ -144,6 +144,15 @@
       "named": false,
       "value": "="
     },
+    "_op_dash": {
+      "type": "ALIAS",
+      "content": {
+        "type": "STRING",
+        "value": "-"
+      },
+      "named": false,
+      "value": "-"
+    },
     "_op_colon": {
       "type": "ALIAS",
       "content": {
@@ -189,79 +198,7 @@
     },
     "range": {
       "type": "PATTERN",
-      "value": "[\\d\\-,]+"
-    },
-    "coordinate_type": {
-      "type": "PATTERN",
-      "value": "[fFcC]"
-    },
-    "sph_ham": {
-      "type": "PATTERN",
-      "value": "[spdfxyz\\d\\-]+"
-    },
-    "identifier": {
-      "type": "PATTERN",
-      "value": "[\\p{L}\\w][\\p{L}\\w]*"
-    },
-    "pair": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "identifier"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_op_eq"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "_op_colon"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "number"
-            },
-            {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "number"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "number"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "number"
-                }
-              ]
-            },
-            {
-              "type": "SYMBOL",
-              "name": "boolean"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "range"
-            }
-          ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_newline"
-        }
-      ]
+      "value": "\\d+[ \\t]*-[ \\t]*\\d+"
     },
     "vec3": {
       "type": "SEQ",
@@ -314,6 +251,116 @@
         {
           "type": "SYMBOL",
           "name": "vec3"
+        }
+      ]
+    },
+    "list": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_list_element"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_list_element"
+          }
+        }
+      ]
+    },
+    "_list_element": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "\\d+"
+              },
+              "named": true,
+              "value": "number"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "range"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_op_comma"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "coordinate_type": {
+      "type": "PATTERN",
+      "value": "[fFcC]"
+    },
+    "sph_ham": {
+      "type": "PATTERN",
+      "value": "[spdfxyz\\d\\-]+"
+    },
+    "identifier": {
+      "type": "PATTERN",
+      "value": "[\\p{L}\\w][\\p{L}\\w]*"
+    },
+    "pair": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_op_eq"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_op_colon"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "vec3"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "number"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "boolean"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "list"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
         }
       ]
     },
