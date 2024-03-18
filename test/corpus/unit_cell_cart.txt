@@ -61,3 +61,36 @@ end unit_cell_cart
       (number)
       (number))
     (comment)))
+
+==================
+block unit_cell_cart with inline comment
+==================
+
+begin unit_cell_cart ! 1
+ang ! 2
+   -1.4430983361036    1.4430983361036    1.3630841209524 ! 3
+    1.4430983361036   -1.4430983361036    1.3630841209524
+    1.4430983361036    1.4430983361036   -1.3630841209524
+end unit_cell_cart ! 4
+
+---
+
+(document
+  (unit_cell_cart
+    (comment)
+    (identifier)
+    (comment)
+    (vec3
+      (number)
+      (number)
+      (number))
+    (comment)
+    (vec3
+      (number)
+      (number)
+      (number))
+    (vec3
+      (number)
+      (number)
+      (number))
+    (comment)))

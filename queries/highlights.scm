@@ -13,14 +13,20 @@
 
 (comment) @comment
 
-(number) @constant.numeric
+[
+  (number)
+] @constant.numeric
 
-(range) @string
+[
+  (range)
+  (list)
+] @string
 
 [
     "."
     ","
     ";"
+    "-"
 ] @punctuation.delimiter
 
 [

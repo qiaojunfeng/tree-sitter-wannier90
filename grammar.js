@@ -39,15 +39,17 @@ module.exports = grammar({
     _keyword_begin: ($) => alias(ignoreCase("begin"), "keyword"),
     _keyword_end: ($) => alias(ignoreCase("end"), "keyword"),
     // I still keep block names as identifier, to have the same color as key-value pairs
-    _keyword_atoms_frac: $ => alias(ignoreCase("atoms_frac"), "identifier"),
-    _keyword_unit_cell_cart: $ => alias(ignoreCase("unit_cell_cart"), "identifier"),
-    _keyword_projections: $ => alias(ignoreCase("projections"), "identifier"),
+    _keyword_atoms_frac: ($) => alias(ignoreCase("atoms_frac"), "identifier"),
+    _keyword_unit_cell_cart: ($) =>
+      alias(ignoreCase("unit_cell_cart"), "identifier"),
+    _keyword_projections: ($) => alias(ignoreCase("projections"), "identifier"),
     orbital_random: ($) => alias(ignoreCase("random"), "keyword"),
-    _keyword_kpoint_path: $=> alias(ignoreCase("kpoint_path"), "identifier"),
-    _keyword_kpoints: $=> alias(ignoreCase("kpoints"), "identifier"),
+    _keyword_kpoint_path: ($) => alias(ignoreCase("kpoint_path"), "identifier"),
+    _keyword_kpoints: ($) => alias(ignoreCase("kpoints"), "identifier"),
     _op_comma: ($) => alias(",", ","),
     _op_dot: ($) => alias(".", "."),
     _op_eq: ($) => alias("=", "="),
+    _op_dash: ($) => alias("-", "-"),
     _op_colon: ($) => alias(":", ":"),
     _op_semicolon: ($) => alias(";", ";"),
     boolean: ($) =>
@@ -58,7 +60,19 @@ module.exports = grammar({
         ignoreCase("false")
       ),
     number: ($) => /[\+\-]?\d+(\.(\d+)?)?([dDeE][\+\-]?\d+)?/,
-    range: ($) => /[\d\-,]+/,
+    range: ($) => /\d+[ \t]*-[ \t]*\d+/, // must be positive integers
+    vec3: ($) =>
+      seq(
+        $.number,
+        optional($._op_comma),
+        $.number,
+        optional($._op_comma),
+        $.number
+      ),
+    _str_vec3: ($) => seq($.identifier, $.vec3),
+    list: ($) => seq($._list_element, repeat1($._list_element)), // at least 2 elements
+    _list_element: ($) =>
+      seq(choice(alias(/\d+/, $.number), $.range), optional($._op_comma)),
     coordinate_type: ($) => /[fFcC]/, // in projections block: fractional or cartesian
     sph_ham: ($) => /[spdfxyz\d\-]+/,
     // identifier: ($) => /[a-zA-Z][0-9a-zA-Z_]*/,
@@ -68,13 +82,9 @@ module.exports = grammar({
       seq(
         $.identifier,
         choice($._op_eq, $._op_colon),
-        choice($.number, seq($.number, $.number, $.number), $.boolean, $.range),
+        choice($.vec3, $.number, $.boolean, $.list),
         $._newline
       ),
-
-    vec3: ($) =>
-      seq($.number, optional($._op_comma), $.number, optional($._op_comma), $.number),
-    _str_vec3: ($) => seq($.identifier, $.vec3),
 
     atoms_frac: ($) =>
       seq(

@@ -125,22 +125,39 @@ fermi_energy = -1D-2
     (number)))
 
 ==================
-pair triple numbers
+pair vec3
 ==================
 
-mp_grid = 1 2 3
+mp_grid = 5 5 1
 
 ---
 
 (document
   (pair
     (identifier)
-    (number)
-    (number)
-    (number)))
+    (vec3
+      (number)
+      (number)
+      (number))))
 
 ==================
-pair range
+pair vec3 comma
+==================
+
+mp_grid = 5, 5, 1
+
+---
+
+(document
+  (pair
+    (identifier)
+    (vec3
+      (number)
+      (number)
+      (number))))
+
+==================
+pair range 3
 ==================
 
 exclude_bands = 1-2,5
@@ -150,4 +167,22 @@ exclude_bands = 1-2,5
 (document
   (pair
     (identifier)
-    (range)))
+    (list
+      (range)
+      (number))))
+
+==================
+pair range 4
+==================
+
+exclude_bands = 1-2,5,10
+
+---
+
+(document
+  (pair
+    (identifier)
+    (list
+      (range)
+      (number)
+      (number))))
