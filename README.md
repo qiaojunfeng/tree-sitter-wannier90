@@ -36,6 +36,8 @@ tree-sitter test
 
 ## Reference
 
+See also [`tree-sitter-quantum_espresso`](https://github.com/qiaojunfeng/tree-sitter-quantum_espresso).
+
 - <https://tree-sitter.github.io/tree-sitter/creating-parsers>
 - <https://github.com/ikatyang/tree-sitter-toml>
 - <https://github.com/stadelmanma/tree-sitter-fortran>
